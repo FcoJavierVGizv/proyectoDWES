@@ -29,3 +29,5 @@ Route::get('profesor', [ProfesorController::class, 'index'])->name('profesor.ind
 Route::put('profesor/{profesor}', [ProfesorController::class, 'update'])->name('profesor.update');
 Route::get('profesor/{profesor}', [ProfesorController::class, 'show'])->name('profesor.show');
 Route::delete('profesor/{profesor}', [ProfesorController::class, 'destroy'])-> name('profesor.destroy');
+
+// id, idalumno, idmodulo, nota, curso

@@ -31,49 +31,44 @@
                         <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{ { route('aboutNombre') } }">About 1</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{ { url('aboutRuta') } }">About 2</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{ { action([App\Http\Controllers\MainController::class, 'aboutMetodo']) } }">About 3</a></li> -->
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="https://ieszaidinvergeles.org">IES ZV</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" target="izv" href="https://ieszaidinvergeles.org">IES ZV</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('portfolio') }}">Portfolio</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('about') }}">About</a></li>
-                        <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('array') }}">Array</a></li> -->
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('alumno.index') }}">Alumno</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('profesor.index') }}">Profesor</a></li>
+                        <!--<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('array') }}">Array</a></li>-->
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('gestion') }}">Gestión</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- Masthead-->
-        
         <header class="masthead bg-primary text-white text-center">
-            @error('error')  <!-- Si llega un mensaje de tipo error con nombre error -->
+            @error('error') <!-- si llega un mensaje de tipo error con nombre error -->
             <div class="row">
                 <div class="col-md-4 mx-auto">
                     <div class="alert alert-danger" role="alert">
                         {{ $message }}
-                    </div>            
+                    </div>
                 </div>
             </div>
             @enderror
-            @session('success') <!-- Si llega una variable en la sesión de nombre success-->
+            @session('success') <!-- si llega una variable en la sesión de nombre success -->
             <div class="row">
                 <div class="col-md-4 mx-auto">
                     <div class="alert alert-info" role="alert">
                         {{ session('success') }}
-                    </div>            
+                    </div>
                 </div>
             </div>
             @endsession
             @yield('before-content')
             @yield('content')
-            @yield('content-before')
             @yield('after-content')
-            <!-- directiva de blade (@WORD) que crea un referencia que cuando herede puedo rellenar -->
         </header>
-
-        @yield('portfolio')
+        <!-- About Section-->
         
+        <!-- Contact Section-->
         
-
-
+        <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
                 <div class="row">
@@ -112,7 +107,6 @@
         </div>
         
         <!-- Bootstrap core JS-->
-         @yield('before-script')
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="{{ asset('assets/script/scripts.js') }}"></script>
