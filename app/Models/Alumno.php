@@ -14,4 +14,9 @@ class Alumno extends Model
     
     //campos que hay que rellenar antes de guardar un objeto en la base de datos
     protected $fillable = ['nombre', 'apellidos', 'fnac', 'genero', 'nacceso'];
+
+    public function matricula(): HasMany
+    {
+        return $this->hasMany(Matricula::class);
+    }
 }

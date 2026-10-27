@@ -15,4 +15,8 @@ class Modulo extends Model
         'creditos',
     ];
 
+    public function matricula(): HasMany
+    {
+        return $this->hasMany(Matricula::class);
+    }
 }
